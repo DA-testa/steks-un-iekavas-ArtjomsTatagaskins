@@ -29,10 +29,16 @@ def find_mismatch(text):
 
 
 def main():
-    text = input()
-    mismatch = find_mismatch(text)
-    print(mismatch)
-
+    letter = input("F or I?")
+    if "F" in letter:
+        filename = input("File name?")
+        with open(filename, "r") as file:
+            brackets = file.read()
+        print(find_mismatch(brackets))
+    elif "I" in letter:
+        brackets = input()
+        print(find_mismatch(brackets))
+    else: print("input error")
 
 if __name__ == "__main__":
     main()
